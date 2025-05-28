@@ -1,2 +1,2 @@
 # terraform
-terraform project featuring eks cluster setup along with dependent aws components
+Terraform project featuring eks cluster setup along with dependent aws components.
