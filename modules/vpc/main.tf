@@ -1,5 +1,5 @@
 module "vpc" {
-  source = "./modules/vpc"
+  source = "terraform-aws-modules/vpc/aws"
   environment = var.environment
   cidr = "10.0.0.0/16"
   name = "my-${var.environment}-vpc
