@@ -1,9 +1,20 @@
 module "eks" {
-  source = "./modules/eks"
-  cluster_name = var.cluster_name
-  eks_version = var.eks_version
-  vpc_id = "modules/vpc/vpc_id"
-  subnet_ids = "modules/vpc/private_subnets"
-  node_group_subnets = "modules/vpc/private_subnets"
-  environment = var.environment
-} 
+  source  = "terraform-aws-modules/eks/aws"
+  version = "~> 20.31"
+  cluster_name    = var.cluster_name
+  cluster_version = var.eks_version
+  vpc_id     = var.vpc_id
+  subnet_ids = var.subnet_ids
+  node_groups = {
+    default = {
+      desired_capacity = 2
+      max_capacity = 3
+      min_capacity = 1
+      instance_types = ["t3.medium"]
+}
+}
+  tags = {
+    Environment = var.environment
+    Terraform   = "true"
+  }
+}
