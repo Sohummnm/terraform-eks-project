@@ -10,7 +10,7 @@ module "eks" {
       desired_capacity = 2
       max_capacity = 3
       min_capacity = 1
-      instance_types = ["t3.medium"]
+      instance_types = ["${var.instance_type}"]
 }
 }
   tags = {
