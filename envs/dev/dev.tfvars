@@ -1,6 +1,6 @@
 region = "us-east-1"
-cluster_name = "Dev"
-environment = "Dev"
+cluster_name = "dev"
+environment = "dev"
 vpc_cidr = "10.0.0.0/16"
 eks_version = "1.31"
 instance_type = "t3.medium"
