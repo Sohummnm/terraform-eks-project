@@ -6,6 +6,5 @@ module "iam_eks_role" {
   cluster_service_accounts = {
     "${var.cluster_name}" = ["default:my-serviceaccount-${var.environment}"]
   }
-  depends_on = [module.eks]
   
 }
