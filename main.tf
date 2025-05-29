@@ -23,3 +23,12 @@ module "eks" {
   environment = var.environment
   
 }
+
+module "eks_node_group" {
+  source = "./modules/eks-node-group"
+
+  cluster_name    = var.cluster_name
+  subnet_ids      = module.vpc.private_subnets
+  instance_type   = var.instance_type
+  environment     = var.environment
+}
