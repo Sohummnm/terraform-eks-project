@@ -21,6 +21,7 @@ module "eks" {
   eks_version = var.eks_version
   subnet_ids = module.vpc.private_subnets
   environment = var.environment
+  instance_type   = var.instance_type
   
 }
 
