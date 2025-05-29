@@ -32,4 +32,6 @@ module "eks_node_group" {
   subnet_ids      = module.vpc.private_subnets
   instance_type   = var.instance_type
   environment     = var.environment
+  vpc_id = module.vpc.vpc_id
+  eks_version = var.eks_version
 }
