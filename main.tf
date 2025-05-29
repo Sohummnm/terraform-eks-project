@@ -6,6 +6,7 @@ module "vpc" {
   source = "./modules/vpc"
   cidr_block = var.vpc_cidr
   environment = var.environment
+  cluster_name = var.cluster_name
 }
 
 module "iam" {
