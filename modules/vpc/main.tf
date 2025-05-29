@@ -4,7 +4,6 @@ data "aws_availability_zones" "available" {
 
 module "vpc" {
   source = "terraform-aws-modules/vpc/aws"
-  environment = var.environment
   cidr = var.cidr_block
   name = "my-${var.environment}-vpc"
 
