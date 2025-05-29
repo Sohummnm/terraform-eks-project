@@ -10,6 +10,8 @@ module "eks_node_group" {
   min_size     = 1
   max_size     = 3
   instance_types = [var.instance_type]
+  cluster_service_ipv4_cidr     = var.cluster_service_cidr
+  cluster_primary_security_group_id = var.cluster_primary_sg_id
 
   tags = {
     Environment = var.environment
