@@ -36,4 +36,6 @@ module "eks_node_group" {
   environment     = var.environment
   vpc_id = module.vpc.vpc_id
   eks_version = var.eks_version
+  cluster_service_ipv4_cidr = "172.20.0.0/16"
+  cluster_primary_security_group_id = module.eks.cluster_primary_security_group_id
 }
