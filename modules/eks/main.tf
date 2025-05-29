@@ -5,8 +5,6 @@ module "eks" {
   cluster_version = var.eks_version
   vpc_id     = var.vpc_id
   subnet_ids = var.subnet_ids
-  
-  cluster_service_cidr = "172.20.0.0/16"
   tags = {
     Environment = var.environment
     Terraform   = "true"
