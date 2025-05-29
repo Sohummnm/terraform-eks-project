@@ -5,7 +5,7 @@ data "aws_availability_zones" "available" {
 module "vpc" {
   source = "terraform-aws-modules/vpc/aws"
   cidr = var.cidr_block
-  cluster_name = "my-${var.environment}-vpc"
+  name = "my-${var.environment}-vpc"
 
   azs             = [data.aws_availability_zones.available.names[0]]
   private_subnets = ["10.0.1.0/24"]
